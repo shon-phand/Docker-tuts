@@ -1,0 +1,13 @@
+commands to build
+
+docker build .
+
+run 
+
+docker run -p 3000:3000 -v /app/node_modules -v $(pwd):/app <image-id>
+
+
+-v /app/node_modules - this flag says do not make any changes for node_modules directory in container
+
+-v $(pwd):/app  - this flag says link present working directory to the WORDIR in the container.
+                    So any changes made to the local will reflect in the container.
